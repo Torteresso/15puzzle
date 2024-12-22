@@ -135,14 +135,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Board.cpp" />
+    <ClCompile Include="board.cpp" />
+    <ClCompile Include="direction.cpp" />
     <ClCompile Include="error.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="tile.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Board.h" />
+    <ClInclude Include="board.h" />
+    <ClInclude Include="direction.h" />
     <ClInclude Include="error.h" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="random.h" />
     <ClInclude Include="tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

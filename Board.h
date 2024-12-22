@@ -3,12 +3,15 @@
 
 #include "tile.h"
 #include "array"
+#include "direction.h"
+#include "point.h"
 
 
 namespace Config
 {
-	constexpr int g_consoleLines{ 30 };
+	constexpr int g_consoleLines{ 32 };
 	constexpr int gridSize{ 4 };
+	constexpr int howMuchRandom{ 5000 };
 }
 
 class Board
@@ -32,8 +35,17 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& out, const Board& board);
 
+	bool moveTile(const Direction& dir);
+	bool isSolved() const;
+	void randomize();
+
 private:
 	Grid m_grid{ {} };
+
+
+	Tile& getTileFromPoint(const Point& p);
+	const Point emptyTileAsPoint() const;
+	bool pointInGrid(const Point& p) const;
 };
 
 #endif
