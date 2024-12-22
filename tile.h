@@ -5,17 +5,21 @@
 
 class Tile
 {
-private:
-	int m_num{0};
-
 public:
+	Tile() = default;
 	explicit Tile(int n) : m_num {n} {}
 
 	bool isEmpty() const;
 
 	int getNum() const { return m_num; }
-	
-	friend std::ostream& operator<<(std::ostream& out, const Tile& t);
+
+
+private:
+	int m_num{0};
+
 };
+
+
+std::ostream& operator<<(std::ostream& out, const Tile& tile);
 
 #endif
